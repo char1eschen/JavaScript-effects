@@ -10,6 +10,7 @@ These free JavaScript effects can be easily used by web designers and developers
 
 ## Image hover effects
 * [Scroll horizontally](https://github.com/char1eschen/JavaScript-effects/tree/master/Images/Scroll-horizontally)
+* [Hover over image](https://github.com/char1eschen/JavaScript-effects/tree/master/Images/Hover-over-image)
 
 ## Interactive drag&drop effects
 
