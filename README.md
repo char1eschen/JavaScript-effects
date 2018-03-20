@@ -8,7 +8,8 @@ These free JavaScript effects can be easily used by web designers and developers
 ---
 ## Menu animations
 
-## Image  hover effects
+## Image hover effects
+* [Scroll horizontally](https://github.com/char1eschen/JavaScript-effects/tree/master/Images/Scroll-horizontally)
 
 ## Interactive drag&drop effects
 
