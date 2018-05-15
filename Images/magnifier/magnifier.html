@@ -16,45 +16,45 @@
       var normal = document.getElementById("normal");
       var lay = getElementById("lay");
       var bigImg = document.getElementById("bigImg");
-      var imgZoom = bigImg.getElementsByTagName("img")[0];
+      var img = bigImg.getElementsByTagName("img")[0];
 
       //when mouse move over, display #lay and #bigImg
-      imgOriginal.onmouseover = function() {
+      normal.onmouseover = function() {
         lay.style.display = "block";
         bigImg.style.display = "block";
       };
       //when mouse move out, hide #lay and #bigImg
-      imgOriginal.onmouseout = function() {
+      normal.onmouseout = function() {
         lay.style.display = "none";
         bigImg.style.display = "none";
       }
       //zoom pic
-      imgOriginal.onmousemove = function(ev) {
+      normal.onmousemove = function(ev) {
         var ev = ev || event;
         //4X zoom
         var scale = 4;
         //mouse in the middle of #lay
-        var x = ev.clientX - lay.offsetWidth/2 - imgOriginal.offsetLeft;
-        var y = ev.clientY - lay.offsetHeight/2 - imgOriginal.offsetTop;
+        var x = ev.clientX - lay.offsetWidth/2 - normal.offsetLeft;
+        var y = ev.clientY - lay.offsetHeight/2 - normal.offsetTop;
         //set width and height of #lay  
-        lay.style.width = parseInt( imgOriginal.offsetWidth / scale ) + "px";
-        lay.style.height = parseInt( imgOriginal.offsetHeight / scale ) + "px";
-        //set width and height of #imgZoom 
-        imgZoom.style.width = imgOriginal.offsetWidth * scale + "px";
-        imgZoom.style.height = imgOriginal.offsetHeight * scale + "px";
+        lay.style.width = parseInt( normal.offsetWidth / scale ) + "px";
+        lay.style.height = parseInt( normal.offsetHeight / scale ) + "px";
+        //set width and height of #img 
+        img.style.width = normal.offsetWidth * scale + "px";
+        img.style.height = normal.offsetHeight * scale + "px";
         
         //out of border
         if( x<0 ){
           x = 0; //left border, when out of border x=0; 
         }
-        if( x>=imgOriginal.offsetWidth - lay.offsetWidth ){
-          x = imgOriginal.offsetWidth - lay.offsetWidth; //right border，mouse can't move out of right border 
+        if( x>=normal.offsetWidth - lay.offsetWidth ){
+          x = normal.offsetWidth - lay.offsetWidth; //right border，mouse can't move out of right border 
         }
         if( y<0 ){
           y = 0; //top border, when out of border y=0;
         }
-        if( y>= imgOriginal.offsetHeight - lay.offsetHeight ){
-          y = imgOriginal.offsetHeight - lay.offsetHeight;  //bottom border, mouse can't move out of bottom border
+        if( y>= normal.offsetHeight - lay.offsetHeight ){
+          y = normal.offsetHeight - lay.offsetHeight;  //bottom border, mouse can't move out of bottom border
         }
         //#lay move with ouse
         lay.style.left = x + "px";
@@ -62,8 +62,8 @@
         //zoom as 4X
         var left = scale * lay.offsetLeft;
         var top = scale * lay.offsetTop;
-        imgZoom.style.left = -left + "px";
-        imgZoom.style.top = -top + "px";
+        img.style.left = -left + "px";
+        img.style.top = -top + "px";
       }
     }
 	</script>
